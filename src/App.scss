@@ -1,0 +1,18 @@
+.container {
+  box-sizing: border-box;
+  max-width: 1200px;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+html,
+body {
+background: #000 url(./misc/images/breaking-bad-image.jpg) no-repeat top center/cover;
+overflow-x: hidden;
+color: #fff;
+font-family: 'Helvetica Neue', sans-serif;
+height: 100vh;
+}

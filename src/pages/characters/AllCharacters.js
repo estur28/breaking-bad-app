@@ -1,12 +1,13 @@
 import React from 'react'
 import AboutCharacter from './AboutCharacter'
-import Spinner from '../../misc/Spinner'
+import Spinner from '../../components/Spinner'
 import './AllCharacters.scss'
 
 const AllCharacters = ( { items, isLoading } ) => isLoading ? (
             <Spinner />
         ) : (
             <section className='about-all'>
+                
                 {items.map((item) => (
                     <AboutCharacter 
                         key={item.char_id}

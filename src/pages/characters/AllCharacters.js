@@ -3,12 +3,12 @@ import AboutCharacter from './AboutCharacter'
 import Spinner from '../../components/Spinner'
 import './AllCharacters.scss'
 
-const AllCharacters = ( { items, isLoading } ) => isLoading ? (
+const AllCharacters = ( { itemsChar, isLoading } ) => isLoading ? (
             <Spinner />
         ) : (
             <section className='about-all'>
                 
-                {items.map((item) => (
+                {itemsChar.map((item) => (
                     <AboutCharacter 
                         key={item.char_id}
                         item={item} />

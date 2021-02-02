@@ -4,18 +4,41 @@ import AboutEpisode from "./AboutEpisode"
 
 import './AboutEpisode.scss'
 
-
-const AllEpisodes = ({ items, isLoading}) => isLoading ? (
-    <Spinner />
-) : (
-    <section className='about-episodes__all'>
-                {items.map((item) => (
+// const initialQuote = {
+//     text: 'Quote',
+//     author: 'Author'
+// }
+const AllEpisodes = ({itemsEpisode, isLoading}) => {
+    return (
+    (isLoading) ?
+     (<Spinner />) : 
+     (<section className='about-episodes__all'>
+                {itemsEpisode.map((item) => (
                     <AboutEpisode 
-                        key={item.episode_id}
+                        key={item.char_id}
                         item={item} />
                 ))}
-            </section>
-)
-      
+    </section>)
+    ) 
+    
+}
 
 export default AllEpisodes
+
+
+    // const [quotes, setQuotes] = useState(initialQuote);
+    // const getAllQuotes = async() => {
+    //     const API_BASE_URL = 'https://www.breakingbadapi.com/api/episodes';
+    //     const res = await fetch(API_BASE_URL);
+    //     const [newQuote] = await res.json();
+
+    //     setQuotes({})
+    // }
+
+    // useEffect(() => {
+    //     getAllQuotes();
+    // }, []);
+
+    // return (
+
+                

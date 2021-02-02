@@ -4,24 +4,21 @@ import React, {useState} from 'react'
 
 import './SearchCharacter.scss'
 
-const SearchCharacters = ({ getQuery, searchOption,  setSearchOption }) => {
+const SearchCharacters = ({ getQuery }) => {
 
     const [text, setText] = useState('')    
-    // const [searchOption, setSearchOption] = useState('characters')
-
-    const isCategorySearch = searchOption === 'characters'
+    // const [searchOption, setSearchOption] = useState('characters');
 
     const onChangeText = (q) => {
         setText(q)
         getQuery(q)
     }
 
-    const onRadioChange = (e) => {
-        setSearchOption(e.target.value);
-    }
+    // const onRadioChange = (e) => {
+    //     setSearchOption(e.target.value);
+    // }
 
     // const getSearchOption = () => {
-    
     //             if (items && items.length === 0) {
     //                 return <div>No results</div>
     //             }
@@ -47,14 +44,18 @@ const SearchCharacters = ({ getQuery, searchOption,  setSearchOption }) => {
             <div>
                 <label htmlFor="characters-search">
                     Characters
-                    <input id="characters-search" type="radio" value="characters" onChange={onRadioChange}
-                    checked={isCategorySearch} />
+                    <input id="characters-search" type="radio" value="characters" 
+                    // onChange={onRadioChange}
+                    // checked={isCategorySearch} 
+                    />
                 </label>
 
                 <label htmlFor="episodes-search">
                     Episodes
-                    <input id="episodes-search" type="radio" value="episodes" onChange={onRadioChange}
-                    checked={!isCategorySearch} />
+                    <input id="episodes-search" type="radio" value="episodes" 
+                    // onChange={onRadioChange}
+                    // checked={!isCategorySearch} 
+                    />
                 </label>
             </div>
 

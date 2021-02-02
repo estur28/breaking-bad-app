@@ -9,31 +9,30 @@ const AboutCharacter = ({ item }) => (
                <div className="about-image">
                    <img src={item.img} alt='Character' />
                </div>
-
-               <div className='about-info'>
+               <section className='about-info'>
                     <h1>{item.name}</h1>
-                    <ul>
-                        <li>
+                    <div>
+                        <p>
                             <strong>Actor Name:</strong>
                             {item.portrayed}
-                        </li>
+                        </p>
 
-                        <li>
+                        <p>
                             <strong>Nickame:</strong>
                             {item.nickname}
-                        </li>
+                        </p>
 
-                        <li>
+                        <p>
                             <strong>Birthday:</strong>
                             {item.birthday}
-                        </li>
+                        </p>
 
-                        <li>
+                        <p>
                             <strong>Status:</strong>
                             {item.status}
-                        </li>
-                    </ul>
-               </div>
+                        </p>
+                    </div>
+               </section>
            </div>
         </section>
     )

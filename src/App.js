@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../node_modules/axios';
 import AllCharacters from './pages/characters/AllCharacters'
-// import AllEpisodes from './pages/episodes/AllEpisodes'
 import './App.scss';
 import Title from './components/Title'
 import SearchCharacters from './components/SearchCharacters'
@@ -20,12 +19,12 @@ const App = () => {
   const [itemsQuote, setItemsQuote] = useState([])
 
   const [isLoading, setIsLoading] = useState(true)
-  // const [query, setQuery] = useState('')
+  const [query, setQuery] = useState('')
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchItems = async() => {
     setIsLoading(true);
-    const charApi = ('https://www.breakingbadapi.com/api/characters')
+    const charApi = (`https://www.breakingbadapi.com/api/characters?name=${query}`)
     const randomApi = ('https://www.breakingbadapi.com/api/character/random')
     const episodeApi = ('https://www.breakingbadapi.com/api/episodes')
     const quoteApi = ('https://www.breakingbadapi.com/api/quotes')
@@ -55,12 +54,13 @@ const App = () => {
         setItemsQuote(allDataQuotes);
 
         setIsLoading(false)
-      })
+      }, [query])
     )
   }
 
   useEffect(() => {
     fetchItems()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
    
@@ -73,7 +73,7 @@ const App = () => {
     <Navbar/>
       <Title />
       <SearchCharacters  
-      // getQuery={(q) => setQuery(q)}
+      getQuery={(q) => setQuery(q)}
        /> 
       <AllCharacters isLoading={isLoading} itemsChar={itemsChar} />
     </div>

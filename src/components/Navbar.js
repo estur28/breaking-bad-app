@@ -4,13 +4,26 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 
-export const Nav = styled.ul`
+const Nav = styled.ul`
   display: flex;
   justify-content: center;
   list-style: none;
   margin: 0 0 30px;
-  padding: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
 `;
+
+const StyledLink = styled(Link)`
+    margin: 0 10px;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    &.active {
+        color: #A62A00;
+    }
+`
 
 const LINKS = [
     {to: '/', text: 'Home'},
@@ -27,11 +40,11 @@ const Navbar = () => {
         <div>
             <Nav>
             {LINKS.map(item => (<li key={item.to}>
-                <Link
+                <StyledLink
                to={item.to}
                className={item.to === location.pathname ? 'active' : ''}>
                    {item.text}
-                   </Link>
+                   </StyledLink>
                    </li>))}
             </Nav>
         </div>

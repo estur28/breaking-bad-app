@@ -31,7 +31,6 @@ const SearchCharacters = ({ getQuery }) => {
     // }
 
     return (
-        
         <section className='search'>
             <form>
                 <input type='text'
@@ -40,27 +39,7 @@ const SearchCharacters = ({ getQuery }) => {
                         value={text}
                         onChange={(e) => onChangeText(e.target.value)} />
             </form>
-
-            <div>
-                <label htmlFor="characters-search">
-                    Characters
-                    <input id="characters-search" type="radio" value="characters" 
-                    // onChange={onRadioChange}
-                    // checked={isCategorySearch} 
-                    />
-                </label>
-
-                <label htmlFor="episodes-search">
-                    Episodes
-                    <input id="episodes-search" type="radio" value="episodes" 
-                    // onChange={onRadioChange}
-                    // checked={!isCategorySearch} 
-                    />
-                </label>
-            </div>
-
         </section>
-    
     )
 }
 export default SearchCharacters

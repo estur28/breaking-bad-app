@@ -14,7 +14,9 @@ export const Nav = styled.ul`
 
 const LINKS = [
     {to: '/', text: 'Home'},
-    {to: '/random', text: 'Random'}
+    {to: '/random', text: 'Random'},
+    {to: '/episodes', text: 'Episodes'},
+    {to: '/quotes', text: 'Quotes'}
 ];
 
 const Navbar = () => {

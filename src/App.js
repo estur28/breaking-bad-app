@@ -9,6 +9,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import RandomChar from './pages/random/RandomChar';
 import AllQuotes from './pages/quotes/AllQuotes';
+import Search from './components/Search';
 
 
 const App = () => {
@@ -20,14 +21,16 @@ const App = () => {
 
   const [isLoading, setIsLoading] = useState(true)
   const [query, setQuery] = useState('')
+  const [randomQuery, setRandomQuery] = useState()  
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
   const fetchItems = async() => {
     setIsLoading(true);
     const charApi = (`https://www.breakingbadapi.com/api/characters?name=${query}`)
-    const randomApi = ('https://www.breakingbadapi.com/api/character/random')
+    const randomApi = (`https://www.breakingbadapi.com/api/character/random?limit=${randomQuery}`)
     const episodeApi = ('https://www.breakingbadapi.com/api/episodes')
-    const quoteApi = ('https://www.breakingbadapi.com/api/quotes')
+    const quoteApi = (`https://www.breakingbadapi.com/api/quotes`)
 
     const getItemsChar = axios.get(charApi)
     const getItemsRandom = axios.get(randomApi)
@@ -41,28 +44,17 @@ const App = () => {
         const allDataEpisode = allData[2].data
         const allDataQuotes = allData[3].data
 
-        console.log(allDataChar);
-        setItemsChar(allDataChar);
-
-        console.log(allDataRandom);
-        setItemsRandom(allDataRandom);
-
-        console.log(allDataEpisode);
-        setItemsEpisode(allDataEpisode);
-
-        console.log(allDataQuotes);
-        setItemsQuote(allDataQuotes);
-
+        setItemsChar(allDataChar)
+        setItemsRandom(allDataRandom)
+        setItemsEpisode(allDataEpisode)
+        setItemsQuote(allDataQuotes)
         setIsLoading(false)
-      }, [query])
-    )
-  }
+      }),
+      
+      )}
+      fetchItems()
 
-  useEffect(() => {
-    fetchItems()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
+    }, [query, randomQuery])
    
   return (
     <>
@@ -83,8 +75,8 @@ const App = () => {
     <div className='container'>
     <Navbar/>
       <Title />
-      <SearchCharacters  
-      // getQuery={(q) => setQuery(q)}
+      <Search 
+      getRandomQuery={(n) => setRandomQuery(n)}
        /> 
       <RandomChar isLoading={isLoading} itemsRandom={itemsRandom} />
     </div>
@@ -94,9 +86,9 @@ const App = () => {
     <div className='container'>
     <Navbar/>
       <Title />
-      <SearchCharacters  
+      {/* <SearchCharacters  
       // getQuery={(q) => setQuery(q)}
-       /> 
+       />  */}
       <AllEpisodes isLoading={isLoading} itemsEpisode={itemsEpisode} />
     </div>
     </Route>
@@ -105,9 +97,9 @@ const App = () => {
     <div className='container'>
     <Navbar/>
       <Title />
-      <SearchCharacters  
-      // getQuery={(q) => setQuery(q)}
-       /> 
+      {/* <SearchCharacters  
+      getQuery={(q) => setQuery(q)}
+       />  */}
       <AllQuotes isLoading={isLoading} itemsQuote={itemsQuote} />
     </div>
     </Route>

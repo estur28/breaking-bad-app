@@ -3,10 +3,9 @@ import AboutCharacter from '../characters/AboutCharacter'
 import Spinner from '../../components/Spinner'
 import './RandomChar.scss'
 
-const RandomChar = ( {itemsRandom, isLoading} ) => {
-    return (
-            isLoading ? 
-            (<Spinner/>) : 
+const RandomChar = ( {itemsRandom, isLoading} ) => isLoading ? ( 
+            <Spinner/>
+                ) : ( 
             <section className='about-all'>
             {itemsRandom.map((item) => (
                 <AboutCharacter
@@ -14,7 +13,8 @@ const RandomChar = ( {itemsRandom, isLoading} ) => {
                     item={item} />
             ))}
             </section>
-    )
-}
+        )
+    
+
 
 export default RandomChar

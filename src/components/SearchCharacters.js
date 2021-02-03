@@ -1,45 +1,44 @@
 import React, {useState} from 'react'
-// import AllCharacters from '../pages/characters/AllCharacters'
-// import AllEpisodes from '../pages/episodes/AboutEpisode'
+import styled from 'styled-components'
+// import './SearchCharacter.scss'
 
-import './SearchCharacter.scss'
+const SearchBox = styled.section`
+    height: 100px;
+`
+
+const SearchInput = styled.input`
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 5px;
+    width: 60%;
+    margin: auto;
+    outline: none;
+`
 
 const SearchCharacters = ({ getQuery }) => {
 
-    const [text, setText] = useState('')    
-    // const [searchOption, setSearchOption] = useState('characters');
+    const [text, setText] = useState('') 
 
     const onChangeText = (q) => {
         setText(q)
         getQuery(q)
     }
 
-    // const onRadioChange = (e) => {
-    //     setSearchOption(e.target.value);
-    // }
-
-    // const getSearchOption = () => {
-    //             if (items && items.length === 0) {
-    //                 return <div>No results</div>
-    //             }
-    //     if (items && items.length > 0) {
-    //         return items[0].characters 
-    //         ? <AllCharacters data={items}/> :
-    //           <AllEpisodes data={items} />
-    //     }
-    //     return null
-    // }
 
     return (
-        <section className='search'>
+        <SearchBox>
             <form>
-                <input type='text'
+                <SearchInput type='text'
                         className="form-control"
-                        placeholder="Breaking Bad Search"
+                        placeholder="Find your favorite characters..."
                         value={text}
-                        onChange={(e) => onChangeText(e.target.value)} />
+                        onChange={
+                            (e) =>onChangeText(e.target.value)
+                        } />
             </form>
-        </section>
+        </SearchBox>
     )
 }
 export default SearchCharacters

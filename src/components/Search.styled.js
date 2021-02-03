@@ -1,8 +1,10 @@
-.search {
-    height: 100px;
-}
+import styled from 'styled-components'
 
-input[type="text"] {
+export const SearchBox = styled.section`
+    height: 100px;
+`
+
+export const SearchInput = styled.input`
     display: block;
     padding: 10px;
     font-size: 20px;
@@ -11,4 +13,4 @@ input[type="text"] {
     width: 60%;
     margin: auto;
     outline: none;
-}
+`

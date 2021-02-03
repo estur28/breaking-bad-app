@@ -1,44 +1,29 @@
 import React from 'react'
 import Spinner from '../../components/Spinner'
 import AboutEpisode from "./AboutEpisode"
+import styled from 'styled-components'
 
-import './AboutEpisode.scss'
+const AboutAllSection = styled.section`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+`
 
-// const initialQuote = {
-//     text: 'Quote',
-//     author: 'Author'
-// }
 const AllEpisodes = ({itemsEpisode, isLoading}) => {
     return (
     (isLoading) ?
      (<Spinner />) : 
-     (<section className='about-episodes__all'>
+     (<AboutAllSection>
                 {itemsEpisode.map((item) => (
                     <AboutEpisode 
                         key={item.char_id}
                         item={item} />
                 ))}
-    </section>)
+    </AboutAllSection>)
     ) 
-    
 }
 
 export default AllEpisodes
 
-
-    // const [quotes, setQuotes] = useState(initialQuote);
-    // const getAllQuotes = async() => {
-    //     const API_BASE_URL = 'https://www.breakingbadapi.com/api/episodes';
-    //     const res = await fetch(API_BASE_URL);
-    //     const [newQuote] = await res.json();
-
-    //     setQuotes({})
-    // }
-
-    // useEffect(() => {
-    //     getAllQuotes();
-    // }, []);
-
-    // return (
 
                 

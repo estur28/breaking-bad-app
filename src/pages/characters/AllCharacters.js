@@ -1,18 +1,26 @@
 import React from 'react'
 import AboutCharacter from './AboutCharacter'
 import Spinner from '../../components/Spinner'
-import './AllCharacters.scss'
+
+import styled from 'styled-components'
+
+const AboutAllCharacters = styled.section`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 100px;
+`
 
 const AllCharacters = ( { itemsChar, isLoading } ) => isLoading ? (
             <Spinner />
         ) : (
-            <section className='about-all'>
+            <AboutAllCharacters>
                 {itemsChar.map((item) => (
                     <AboutCharacter 
                         key={item.char_id}
                         item={item} />
                 ))}
-            </section>
+            </AboutAllCharacters>
         )
 
 export default AllCharacters

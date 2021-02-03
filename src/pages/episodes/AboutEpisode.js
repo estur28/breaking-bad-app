@@ -1,11 +1,10 @@
 import React from 'react'
 
-import './AllEpisodes.scss'
+import './AboutEpisode.scss'
 
 const AboutEpisode = ( { item }) => (
     <section className='about-episode'>
            <div className="about-episode__inner">
-               <div className='about-episode__info'>
                     <h1>{item.title}</h1>
                     <ul>
                         <li>
@@ -29,7 +28,6 @@ const AboutEpisode = ( { item }) => (
                         </li>
                     </ul>
                </div>
-           </div>
         </section>
     )
 

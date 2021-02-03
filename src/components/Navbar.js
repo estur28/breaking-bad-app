@@ -27,7 +27,6 @@ const StyledLink = styled(Link)`
 
 const LINKS = [
     {to: '/', text: 'Home'},
-    {to: '/random', text: 'Random'},
     {to: '/episodes', text: 'Episodes'},
     {to: '/quotes', text: 'Quotes'}
 ];

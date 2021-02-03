@@ -24,7 +24,11 @@ const BoxText = styled.p`
 const Title = () => (
         <Box>
             <BoxHead>BreakingBadApp</BoxHead>
-            <BoxText>Are you looking for a favorite character?</BoxText>
+            <BoxText>
+                Favorite characters, 
+                episodes and quotes 
+                from the show
+            </BoxText>
         </Box>
     )
 

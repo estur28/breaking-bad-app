@@ -21,7 +21,13 @@ const StyledLink = styled(Link)`
     font-weight: 600;
     font-size: 20px;
     &.active {
-        color: #A62A00;
+        color: #000;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+    @media (max-width: 400px) {
+        margin: 0;
     }
 `
 

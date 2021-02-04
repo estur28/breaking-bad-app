@@ -7,18 +7,23 @@ const Box = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 0;
 `
 
 const BoxHead = styled.h1`
     display: block;
-    color: #A62A00;
-    font-weight: bold;
+    color: #000;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0;
 `
 
 const BoxText = styled.p`
     font-size: 20px;
-    color: #A62A00;
-    font-weight: bold;
+    color: #000;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
 `
 
 const Title = () => (

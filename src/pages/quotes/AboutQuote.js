@@ -6,7 +6,7 @@ const AboutQuote = ( {item} ) => {
     return (
         <section className='about-quote'>
             <div className='about-quote__inner'>
-                    <h1>Author: {item.author} </h1>
+                    <h1>{item.author} </h1>
                     <ul>
                         <li>
                             <strong>Quote:</strong>

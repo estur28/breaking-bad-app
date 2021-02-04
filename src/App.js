@@ -51,7 +51,7 @@ const App = () => {
    
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename="/breaking-bad-app">
     <Switch>
       <Route exact path="/">
     <div className='container'>

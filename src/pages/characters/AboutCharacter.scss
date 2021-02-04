@@ -63,6 +63,25 @@
         }
     }
 }
+
+@media (max-width: 420px) {
+    .about-image img {
+        width: 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .about-info {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .about-image img {
+        width: 120px;
+    }
+}
    
 
    

@@ -1,5 +1,5 @@
 # BreakingBadApp
-:clapper::train::movie_camera::pill:
+:clapper::train::movie_camera:
 
 #### React приложение, использующее [breaking bad api](https://breakingbadapi.com/documentation).
 

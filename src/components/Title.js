@@ -17,6 +17,12 @@ const BoxHead = styled.h1`
     font-size: 40px;
     font-weight: 800;
     margin: 0;
+    @media (max-width: 420px) {
+        font-size: 35px;
+    }
+    @media (max-width: 350px) {
+        font-size: 30px;
+    }
 `
 
 const BoxText = styled.p`

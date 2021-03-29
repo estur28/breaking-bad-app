@@ -2,7 +2,9 @@ import React from 'react'
 
 import './AboutEpisode.scss'
 
-const AboutEpisode = ( { item }) => (
+const AboutEpisode = ( { item, children  }) => {
+    
+    return (
     <section className='about-episode'>
            <div className="about-episode__inner">
                     <h1>{item.title}</h1>
@@ -28,7 +30,10 @@ const AboutEpisode = ( { item }) => (
                         </li>
                     </ul>
                </div>
+               { children }
         </section>
     )
+    
+}
 
 export default AboutEpisode

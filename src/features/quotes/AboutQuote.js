@@ -2,7 +2,7 @@ import React from 'react'
 
 import './AboutQuote.scss'
 
-const AboutQuote = ( {item} ) => {
+const AboutQuote = ( {item, children } ) => {
     return (
         <section className='about-quote'>
             <div className='about-quote__inner'>
@@ -15,6 +15,7 @@ const AboutQuote = ( {item} ) => {
 
                     </ul>
                 </div>
+                { children }
         </section>
     )
 }

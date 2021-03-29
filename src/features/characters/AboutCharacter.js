@@ -3,7 +3,7 @@ import React from 'react'
 import './AboutCharacter.scss'
 
 
-const AboutCharacter = ({ item }) => (
+const AboutCharacter = ({ item, children }) => (
         <section className='about'>
            <div className="about-inner">
                <div className="about-image">
@@ -34,6 +34,7 @@ const AboutCharacter = ({ item }) => (
                     </div>
                </section>
            </div>
+           {children}
         </section>
     )
 
